@@ -1,0 +1,66 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: edd-api
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+  security:
+    user:
+      name: actuator
+      password: eternal
+
+  datasource:
+    dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+    url: jdbc:postgresql://postgres.edd/ejtest
+    username: edd_api
+    password: eternal
+    hikari:
+      maximum-pool-size: 8
+      minimum-idle: 2
+      idle-timeout: 60000
+      connection-timeout: 10000
+
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: false
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        ddl-auto: none
+        # Added to disable Atomikos verification for PostgreSQL CLOB
+        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+
+logging:
+  level:
+    org.zalando.logbook: TRACE
+    org.hibernate.orm: ERROR
+    org.hibernate.SQL: DEBUG
+    com.netflix.eureka: 'OFF'
+
+logbook:
+  secure-filter:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    distribution:
+      percentiles-histogram.http.server.requests: false
+      percentiles.http.server.requests: 0.5, 0.9, 0.95, 0.99, 0.999
+      sla.http.server.requests: 500ms, 2000ms
