@@ -1,8 +1,7 @@
-package com.tanerdiler.edd.model;
+package com.tanerdiler.edd.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jeventbus.shared.EventSource;
-import jeventbus.streaming.EventMessage;
+import com.tanerdiler.edd.websocket.WebSocket;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

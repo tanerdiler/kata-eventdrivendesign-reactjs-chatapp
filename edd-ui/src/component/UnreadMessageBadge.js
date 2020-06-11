@@ -14,8 +14,7 @@ class UnreadMessageBadge extends React.Component {
 
     onMessageSent = (source) => {
         const { roomId, actor } = source;
-        console.log(roomId , this.props.roomId);
-        console.log(actor ,this.props.username);
+
         if (roomId === this.props.roomId && actor !== this.props.username) {
             let { count } = this.state;
             const newCount = count+1;

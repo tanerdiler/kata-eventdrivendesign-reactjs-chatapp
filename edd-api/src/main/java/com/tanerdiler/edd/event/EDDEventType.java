@@ -13,7 +13,6 @@ public enum EDDEventType implements EventType {
     private String methodName;
 
     EDDEventType(String methodName) {
-
         this.methodName = methodName;
     }
 
@@ -21,4 +20,5 @@ public enum EDDEventType implements EventType {
     public String getMethodName() {
         return methodName;
     }
+
 }

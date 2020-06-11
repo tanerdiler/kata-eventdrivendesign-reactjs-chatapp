@@ -1,4 +1,4 @@
-package com.tanerdiler.edd.service;
+package com.tanerdiler.edd.websocket;
 
 import org.springframework.stereotype.Component;
 

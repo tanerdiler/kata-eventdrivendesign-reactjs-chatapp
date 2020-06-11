@@ -18,4 +18,5 @@ public enum EDDEventContext implements EventContext {
     public Optional parse(String name) throws UnknownEnumTypeException {
         return Optional.empty();
     }
+
 }

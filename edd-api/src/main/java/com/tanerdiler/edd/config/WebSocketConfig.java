@@ -1,8 +1,7 @@
 package com.tanerdiler.edd.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tanerdiler.edd.service.WebSocketMessageHandler;
-import com.tanerdiler.edd.service.WebSocketConnections;
+import com.tanerdiler.edd.websocket.WebSocketMessageHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.*;

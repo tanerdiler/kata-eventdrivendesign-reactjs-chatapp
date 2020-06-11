@@ -1,4 +1,4 @@
-package com.tanerdiler.edd.service;
+package com.tanerdiler.edd.websocket;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

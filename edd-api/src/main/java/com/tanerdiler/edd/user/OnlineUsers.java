@@ -1,9 +1,10 @@
-package com.tanerdiler.edd.model;
+package com.tanerdiler.edd.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tanerdiler.edd.event.listener.UserSignedInListener;
 import com.tanerdiler.edd.event.listener.WebSocketEstablishedListener;
-import com.tanerdiler.edd.service.WebSocketConnections;
+import com.tanerdiler.edd.websocket.WebSocket;
+import com.tanerdiler.edd.websocket.WebSocketConnections;
 import jeventbus.shared.EventSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
-import java.lang.annotation.Annotation;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

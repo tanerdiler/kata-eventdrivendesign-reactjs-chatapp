@@ -1,7 +1,6 @@
 package com.tanerdiler.edd.config;
 
-
-import com.tanerdiler.edd.model.OnlineUsers;
+import com.tanerdiler.edd.user.OnlineUsers;
 import com.tanerdiler.edd.service.StopWordChecker;
 import com.tanerdiler.edd.service.UINotifier;
 import jeventbus.core.Events;
@@ -25,7 +24,5 @@ public class ApplicationInitializer {
         Events.event(MESSAGE_READ).add(getBean(UINotifier.class));
         Events.event(CHAT_ROOM_CREATED).add(getBean(UINotifier.class));
     }
-
-
 
 }

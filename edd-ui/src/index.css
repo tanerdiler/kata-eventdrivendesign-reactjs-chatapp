@@ -259,6 +259,26 @@ body, html {
   color: #999;
 }
 
+
+.state {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  float: left;
+  margin-right: 0px;
+  position: relative;
+  left: -30px;
+  top: 5px;
+}
+
+.read {
+  background-color: #108520;
+}
+
+.unread {
+  background-color: #8f8f8f;
+}
+
 @-webkit-keyframes typing {
   0%, 75%, 100% {
     -webkit-transform: translate(0, 0.25rem) scale(0.9);

@@ -1,4 +1,4 @@
-package com.tanerdiler.edd.model;
+package com.tanerdiler.edd.websocket;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.socket.TextMessage;
