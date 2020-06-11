@@ -23,6 +23,9 @@ class ChatRoomPanel extends React.Component {
             const { messages } = this.state;
             messages.push({username: actor, text:message, read: false});
             this.setState({ messages });
+
+            var elem = document.getElementById('messages-'+this.props.room.id);
+            elem.scrollTop = elem.scrollHeight;
         }
     }
 
@@ -76,7 +79,7 @@ class ChatRoomPanel extends React.Component {
             <div className='chat' >
 
                 <div className="contact bar"><UnreadMessageBadge roomId={this.props.room.id} username={this.props.username}/> <div className="name">Chat Room #{room.id}</div></div>
-                <div className="messages">
+                <div className="messages" id={`messages-${room.id}`}>
                     {messages.map((m)=><div className={`message ${m.username===this.props.username ? "parker" : "stark"}`}><b>{m.username}</b>: <span>{m.text}</span>
                         {m.username===this.props.username ? <div className={`state ${m.read ? "read" : "unread"}`}></div> : null}</div>)}
                 </div>

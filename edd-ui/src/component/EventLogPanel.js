@@ -19,8 +19,10 @@ class EventLogPanel extends React.Component {
 
     onEvent = (source) => {
         const { logs } = this.state;
-        logs.push({event:source.event, text:((source.roomId?"ChatRoom#"+source.roomId:"")+", "+source.actor+", "+source.message)});
+        logs.unshift({event:source.event, text:((source.roomId?"ChatRoom#"+source.roomId:"")+", "+source.actor+", "+source.message)});
         this.setState({logs});
+        var elem = document.getElementById('log-container');
+        elem.scrollTop = elem.scrollHeight;
     }
 
     render() {
@@ -28,7 +30,7 @@ class EventLogPanel extends React.Component {
         return (
             <div className='eventlogpanel'>
                 <div className='header'>Event Log Panel</div>
-                <div style={{height:"95%",overflow: "scroll"}}>
+                <div style={{height:"95%",overflow: "scroll"}} id="log-container">
                     <ul>
                         {logs.map(l=><li><b>{l.event}</b>:{l.text}</li>)}
                     </ul>
